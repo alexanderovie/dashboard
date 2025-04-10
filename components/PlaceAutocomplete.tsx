@@ -13,15 +13,6 @@ export default function PlaceAutocomplete() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [businesses, setBusinesses] = useState<{
-    id: string;
-    name: string;
-    address: string;
-    phone?: string;
-    website?: string;
-    lat: number;
-    lng: number;
-  }[]>([]);
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY!,
     libraries: ["places"],
